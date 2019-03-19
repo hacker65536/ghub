@@ -16,6 +16,7 @@ type GithubConfig struct {
 	Local     bool
 	Init      bool
 	Secrets   bool
+	Pattern   []string
 }
 
 var git = "git"
@@ -90,6 +91,16 @@ func (g *GithubConfig) secrets() {
 	if g.Secrets {
 		execRun(git, "secrets", "--install")
 		execRun(git, "secrets", "--register-aws")
+		g.pattern()
+	}
+}
+
+func (g *GithubConfig) pattern() {
+	fmt.Println(g.Pattern)
+	if len(g.Pattern) != 0 {
+		for _, v := range g.Pattern {
+			execRun(git, "secrets", "--add", "'"+v+"'")
+		}
 	}
 }
 

@@ -35,6 +35,10 @@ username: hacker65536
 useremail: s.hacker65536@gmail.com
 host: one_github.com
 repo: ghub2
+secrets: true
+pattern:
+  - myrealname
+  - mycompany
 ```
 
 
@@ -46,6 +50,9 @@ useremail: useremail
 host: <alternate github.com default=github.com> 
 repo: <local dir different from remote>     
 secrets: <true / false> (git secretes)
+pattern:
+  - <myrealname>
+  - <mycompany>
 ```
 
 [secretes](https://github.com/awslabs/git-secrets)
