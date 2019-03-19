@@ -1,6 +1,6 @@
 # ghub
 
-set options of repo
+set repository options of git for me 
 
 
 ## explanation
