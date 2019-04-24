@@ -99,7 +99,7 @@ func (g *GithubConfig) pattern() {
 	fmt.Println(g.Pattern)
 	if len(g.Pattern) != 0 {
 		for _, v := range g.Pattern {
-			execRun(git, "secrets", "--add", "'"+v+"'")
+			execRun(git, "secrets", "--add", v)
 		}
 	}
 }
